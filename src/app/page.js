@@ -1,103 +1,164 @@
+"use client"
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import { Uncial_Antiqua } from "next/font/google";
+
+// upperside
+// clip-path: polygon(18% 11%, 79% 21%, 100% 100%, 0% 100%);
+
+// lowerside
+// clip-path: polygon(0 0, 100% 0, 79% 81%, 19% 87%);
+
+const nameFont = Uncial_Antiqua({
+  weight: "400",
+})
+
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  gsap.registerPlugin(ScrollTrigger)
+
+  useGSAP(() => {
+
+    gsap.to(".home-page",{
+      backgroundColor: "#000000",
+      scrollTrigger:{
+        trigger: ".footer",
+        start: "top bottom",
+        end: "top top",
+        scrub: 0.5
+      }
+    })
+
+    gsap.to(".HeroImage",{
+      clipPath: "polygon(0% 0%,100% 0%,100% 59%,0% 79%)",
+      scrollTrigger:{
+        trigger: ".HeroImage",
+        start: "bottom bottom",
+        end: "bottom top",
+        scrub: 0.5,
+      }
+    })
+
+    const cards = gsap.utils.toArray(".projectCard")
+
+    cards.forEach((card) => {
+      gsap.fromTo(
+        card,
+        {
+          clipPath: "polygon(18% 11%, 79% 21%, 100% 100%, 0% 100%)",
+        },
+        {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+          ease: "none",
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom",
+            end: "top top",
+            scrub: 2,
+          },
+        }
+      )
+
+      gsap.fromTo(
+        card,
+        {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        },
+        {
+          clipPath: "polygon(0% 0%, 100% 0%, 79% 81%, 19% 87%)",
+          ease: "none",
+          scrollTrigger: {
+            trigger: card,
+            start: "bottom bottom",
+            end: "bottom top",
+            scrub: 2,
+          },
+        }
+      )
+
+    })
+
+
+  })
+
+
+  return (
+    <div className="home-page overflow-hidden">
+      <div className="HeroImage w-screen h-screen relative [clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_100%)]">
+        <Image
+          src="/images/shinjan_page-0021.jpg"
+          alt="Hero illustration"
+          fill
+        />
+        <div className={`w-full flex justify-center mt-20 ${nameFont.className} absolute top-0 left-0 uppercase text-[10vw]`}>
+          shinjan
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      </div>
+
+      <div id="SelectedWorks" className="">
+
+        <div className="projectCard [clip-path:polygon(18%_11%,79%_21%,100%_100%,0%_100%)] w-screen h-[120vh] relative">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/images/shinjan_page-0007.jpg"
+            alt="Hero illustration"
+            fill
+            className="object-cover"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+          <h2 className="w-full h-full absolute top-0 left-0 flex justify-center items-center uppercase text-[5vw] text-[#ECDCC3]">laugh you man</h2>
+        </div>
+
+        <div className="projectCard [clip-path:polygon(18%_11%,79%_21%,100%_100%,0%_100%)] w-screen h-[120vh] relative">
           <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+            src="/images/shinjan_page-0033.jpg"
+            alt="Hero illustration"
+            fill
+            className="object-cover"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+          <h2 className="w-full h-full absolute top-0 left-0 flex justify-center items-center uppercase text-[5vw] text-[#ECDCC3]">Untitled</h2>
+        </div>
+
+
+        <div className="projectCard [clip-path:polygon(18%_11%,79%_21%,100%_100%,0%_100%)] w-screen h-[120vh] relative">
           <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+            src="/images/shinjan_page-0004.jpg"
+            alt="Hero illustration"
+            fill
+            className="object-cover"
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <h2 className="w-full h-full absolute top-0 left-0 flex justify-center items-center uppercase text-[5vw] text-[#ECDCC3]">benign violation</h2>
+        </div>
+
+
+        <div className="projectCard [clip-path:polygon(18%_11%,79%_21%,100%_100%,0%_100%)] w-screen h-[120vh] relative">
+          <Image
+            src="/images/shinjan_page-0031.jpg"
+            alt="Hero illustration"
+            fill
+            className="object-cover"
+          />
+          <h2 className="w-full h-full absolute top-0 left-0 flex justify-center items-center uppercase text-[5vw] text-[#ECDCC3]">untitled</h2>
+        </div>
+
+
+        <div className="projectCard [clip-path:polygon(18%_11%,79%_21%,100%_100%,0%_100%)] w-screen h-[120vh] relative">
+          <Image
+            src="/images/shinjan_page-0012.jpg"
+            alt="Hero illustration"
+            fill
+            className="object-cover"
+          />
+          <h2 className="w-full h-full absolute top-0 left-0 flex justify-center items-center uppercase text-[5vw] text-[#ECDCC3]">tickle my funny bone</h2>
+        </div>
+
+      </div>
+
+      <div id="footer" className="footer w-screen h-screen">
+
+      </div>
     </div>
   );
 }
