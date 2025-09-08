@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Uncial_Antiqua } from "next/font/google";
 import { SplitText } from "gsap/SplitText";
 import { useRef } from "react";
+import CallMadeIcon from '@mui/icons-material/CallMade';
 
 // upperside
 // clip-path: polygon(18% 11%, 79% 21%, 100% 100%, 0% 100%);
@@ -37,18 +38,18 @@ export default function Home() {
       }
     })
 
-    const quote = new SplitText(".quote",  { type: "words,chars", mask: "chars" })
-    const author = new SplitText(".author",  { type: "words,chars", mask: "chars" })
+    const quote = new SplitText(".quote", { type: "words,chars", mask: "chars" })
+    const author = new SplitText(".author", { type: "words,chars", mask: "chars" })
 
-    timeline.from(quote.chars,{
-      y:40,
-      opacity:0,
+    timeline.from(quote.chars, {
+      y: 40,
+      opacity: 0,
       stagger: 1
     })
 
-    timeline.from(author.chars,{
-      y:40,
-      opacity:0,
+    timeline.from(author.chars, {
+      y: 40,
+      opacity: 0,
       stagger: 1
     })
 
@@ -128,6 +129,18 @@ export default function Home() {
 
     })
 
+    gsap.from(".inner-connect", {
+      width: "100vw",
+      height: "100vh",
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".connect",
+        start: "start bottom",
+        end: "top top",
+        scrub: true
+      }
+    })
+
 
   })
 
@@ -204,7 +217,7 @@ export default function Home() {
 
       </div>
 
-      <div id="footer" className="footer relative w-screen h-screen text-white flex flex-col justify-center items-center gap-5 shrink-0 flex-nowrap">
+      {/* <div id="footer" className="footer relative w-screen h-screen text-white flex flex-col justify-center items-center gap-5 shrink-0 flex-nowrap">
         <div ref={quoteRef} className="quote text-xl">“Every artist dips his brush in his own soul, and paints his own nature into his pictures.”</div>
         <div ref={authorRef} className="author"><i>- Henry Ward Beecher</i></div>
         <div className="credits absolute bottom-0 left-0 w-full h-max flex justify-center items-center p-10 uppercase">
@@ -217,6 +230,25 @@ export default function Home() {
             <div className="font-semibold">Shinjan Mitra</div>
           </div>
         </div>
+      </div> */}
+
+      <div className='connect relative w-screen h-screen flex justify-center items-center text-white'>
+
+
+        <div className='inner-connect footer w-[85vw] h-[85vh] border-4 rounded-2xl flex flex-col justify-center items-center gap-5'>
+          <div className='text-[20vh]'>
+            Let's Connect!
+          </div>
+          <div className='button w-[8vh] hover:scale-150 transition-all h-[8vh] border-2 flex justify-center items-center rounded-full'>
+            <CallMadeIcon />
+          </div>
+        </div>
+
+        <div className='credits w-full h-[8vh] absolute bottom-0 left-0 flex justify-center items-center'>
+          <div className='w-full h-full dev flex justify-center items-center uppercase font-semibold'>Development: Diganta Biswas</div>
+          <div className='w-full h-full copyright flex justify-center items-center uppercase font-semibold'>Copyright: Shinjan Mitra</div>
+        </div>
+
       </div>
     </div>
   );
