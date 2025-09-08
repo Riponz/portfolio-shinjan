@@ -123,7 +123,7 @@ function Works() {
 
                 <div className='inner-connect w-[85vw] h-[85vh] border-4 rounded-2xl flex flex-col justify-center items-center gap-5'>
                     <div className='text-[20vh]'>
-                        Let's Connect!
+                        Let&apos;s Connect!
                     </div>
                     <div className='button w-[8vh] hover:scale-150 transition-all h-[8vh] border-2 flex justify-center items-center rounded-full'>
                         <CallMadeIcon />
