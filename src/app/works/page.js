@@ -1,11 +1,12 @@
 "use client"
+
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image'
 import React from 'react'
 
-function page() {
+function Works() {
 
     gsap.registerPlugin(ScrollTrigger)
 
@@ -100,7 +101,7 @@ function page() {
                 imageNumber.map((image, index) => {
                     // console.log(index)
                     return (
-                        <div className='workCards w-screen h-screen relative flex justify-center items-center'>
+                        <div key={index} className='workCards w-screen h-screen relative flex justify-center items-center'>
                             <div className='project-image p-2 relative w-[58%] h-[65%] overflow-hidden rounded-4xl'>
                                 <Image
                                     src={`/images/shinjan_page-00${image}.jpg`}
@@ -136,7 +137,7 @@ function page() {
     )
 }
 
-export default page
+export default Works
 
 // Title image - 2, 5, 7, 9, 11, 13, 16, 18, 20, 21, 24, 26, 27, 28, 29, 30, 31, 32 ,33, 34, 35
 {/* <div className='w-full h-[70vh] flex justify-center items-center'>
