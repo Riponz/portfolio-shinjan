@@ -39,14 +39,16 @@ function Navbar() {
     floatMenuRef.current.reverse()
     menuIconRef.current.reverse()
     setPlay(false)
-    window.open("mailto:yourname@example.com", "_blank")
+  }
+
+  const resetConnect = () => {
+    floatMenuRef.current.reverse()
+    menuIconRef.current.reverse()
+    setPlay(false)
+    window.open("mailto:shinjanmitra2002@example.com", "_blank")
   }
 
   const handleFloatingMenu = () => {
-
-    console.log("prssed")
-
-    // setPlay(!play)
 
     if (!play) {
       floatMenuRef.current.play()
@@ -79,7 +81,7 @@ function Navbar() {
           <div className='flex justify-center items-center gap-0.5'><SquareIcon sx={{ fontSize: 10 }} className='rotate-45' /><Link href="/">MITRA</Link></div>
         </div>
         <div className='flex text-white flex-1/2 justify-end items-center' onClick={handleFloatingMenu}>
-          <div ref={menuIcon} className='border-1 w-6 h-6 flex flex-col justify-start items-center overflow-hidden'>
+          <div ref={menuIcon} className='w-6 h-6 flex flex-col justify-start items-center overflow-hidden'>
             <DragHandleIcon />
             <ClearIcon />
           </div>
@@ -88,7 +90,7 @@ function Navbar() {
       <div ref={floatMenu} className='floating-menu fixed z-19 top-0 left-0 flex flex-col items-center w-screen h-0 opacity-0 bg-black text-[#ECDCC3] justify-center text-4xl font-semibold'>
         <div className='flex justify-center items-center gap-0.5' onClick={resetPlay}><SquareIcon sx={{ fontSize: 10 }} className='rotate-45' /><Link href="/works">WORKS</Link></div>
         <div className='flex justify-center items-center gap-0.5' onClick={resetPlay}><SquareIcon sx={{ fontSize: 10 }} className='rotate-45' /><Link href="/about">ABOUT</Link></div>
-        <div className='flex justify-center items-center gap-0.5' onClick={resetPlay}><SquareIcon sx={{ fontSize: 10 }} className='rotate-45' /><Link href="#">CONTACT</Link></div>
+        <div className='flex justify-center items-center gap-0.5' onClick={resetConnect}><SquareIcon sx={{ fontSize: 10 }} className='rotate-45' /><Link href="#">CONTACT</Link></div>
       </div>
     </>
   )

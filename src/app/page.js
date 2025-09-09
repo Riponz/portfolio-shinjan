@@ -145,7 +145,7 @@ export default function Home() {
   })
 
   const handleEmailClick = () => {
-    window.open("mailto:yourname@example.com", "_blank");
+    window.open("mailto:shinjanmitra2002@example.com", "_blank");
   };
 
 

@@ -100,7 +100,7 @@ function Works() {
     ];
 
     const handleEmailClick = () => {
-        window.open("mailto:yourname@example.com", "_blank");
+        window.open("mailto:shinjanmitra2002@example.com", "_blank");
     };
     return (
         <div className='w-screen'>
