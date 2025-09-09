@@ -155,7 +155,7 @@ export default function Home() {
           fill
           className="object-cover"
         />
-        <div className={`w-full flex justify-center mt-20 ${nameFont.className} absolute top-0 left-0 uppercase text-[10vw]`}>
+        <div className={`w-full flex justify-center mt-20 ${nameFont.className} absolute top-0 left-0 uppercase text-[15vw] md:text-[10vw]`}>
           shinjan
         </div>
       </div>
@@ -169,7 +169,7 @@ export default function Home() {
             fill
             className="object-cover"
           />
-          <h2 className="w-full h-full absolute top-0 left-0 flex justify-center items-center uppercase whitespace-pre text-[5vw] text-[#ECDCC3] project-title">laugh&nbsp;you&nbsp;man</h2>
+          <h2 className="w-full h-full absolute top-0 left-0 flex justify-center items-center uppercase text-[8vw] md:whitespace-pre text-[5vw] text-[#ECDCC3] project-title">laugh&nbsp;you&nbsp;man</h2>
         </div>
 
         <div className="projectCard [clip-path:polygon(18%_11%,79%_21%,100%_100%,0%_100%)] w-screen h-[120vh] relative">
@@ -179,7 +179,7 @@ export default function Home() {
             fill
             className="object-cover"
           />
-          <h2 className="w-full h-full absolute top-0 left-0 flex justify-center items-center uppercase text-[5vw] text-[#ECDCC3] project-title">Untitled</h2>
+          <h2 className="w-full h-full absolute top-0 left-0 flex justify-center items-center uppercase text-[8vw] md:text-[5vw] text-[#ECDCC3] project-title">Untitled</h2>
         </div>
 
 
@@ -190,7 +190,7 @@ export default function Home() {
             fill
             className="object-cover"
           />
-          <h2 className="w-full h-full absolute top-0 left-0 flex justify-center items-center uppercase text-[5vw] text-[#ECDCC3] project-title">benign&nbsp;violation</h2>
+          <h2 className="w-full h-full absolute top-0 left-0 flex justify-center items-center uppercase text-[8vw] md:text-[5vw] text-[#ECDCC3] project-title">benign&nbsp;violation</h2>
         </div>
 
 
@@ -201,7 +201,7 @@ export default function Home() {
             fill
             className="object-cover"
           />
-          <h2 className="w-full h-full absolute top-0 left-0 flex justify-center items-center uppercase text-[5vw] text-[#ECDCC3] project-title">untitled</h2>
+          <h2 className="w-full h-full absolute top-0 left-0 flex justify-center items-center uppercase text-[8vw] md:text-[5vw] text-[#ECDCC3] project-title">untitled</h2>
         </div>
 
 
@@ -212,7 +212,7 @@ export default function Home() {
             fill
             className="object-cover"
           />
-          <h2 className="w-full h-full absolute top-0 left-0 flex justify-center items-center uppercase text-[5vw] text-[#ECDCC3] project-title">tickle&nbsp;my&nbsp;funny&nbsp;bone</h2>
+          <h2 className="w-full h-full absolute top-0 left-0 flex justify-center items-center uppercase text-[8vw] md:text-[5vw] text-[#ECDCC3] project-title">tickle&nbsp;my&nbsp;funny&nbsp;bone</h2>
         </div>
 
       </div>
@@ -235,8 +235,8 @@ export default function Home() {
       <div className='connect relative w-screen h-screen flex justify-center items-center text-white'>
 
 
-        <div className='inner-connect footer w-[85vw] h-[85vh] border-4 rounded-2xl flex flex-col justify-center items-center gap-5'>
-          <div className='text-[20vh]'>
+        <div className='inner-connect footer w-[85vw] h-[85vh] lg:border-4 lg:rounded-2xl flex flex-col justify-center items-center gap-5'>
+          <div className='text-[8vw] lg:text-[20vh]'>
             Let&apos;s Connect!
           </div>
           <div className='button w-[8vh] hover:scale-150 transition-all h-[8vh] border-2 flex justify-center items-center rounded-full'>
@@ -245,8 +245,8 @@ export default function Home() {
         </div>
 
         <div className='credits w-full h-[8vh] absolute bottom-0 left-0 flex justify-center items-center'>
-          <div className='w-full h-full dev flex justify-center items-center uppercase font-semibold'>Development: Diganta Biswas</div>
-          <div className='w-full h-full copyright flex justify-center items-center uppercase font-semibold'>Copyright: Shinjan Mitra</div>
+          <div className='w-full h-full dev flex justify-center items-center uppercase lg:font-semibold text-sm lg:text-base'>Development: Diganta Biswas</div>
+          <div className='w-full h-full copyright flex justify-center items-center uppercase lg:font-semibold text-sm lg:text-base'>Copyright: Shinjan Mitra</div>
         </div>
 
       </div>
