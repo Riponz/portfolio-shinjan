@@ -118,7 +118,7 @@ function Works() {
                     )
                 })
             }
-            <div className='connect relative w-screen h-screen flex justify-center items-center text-white'>
+            <div className='connect relative w-screen h-screen flex justify-center items-center'>
 
 
         <div className='inner-connect footer w-[85vw] h-[85vh] lg:border-4 lg:rounded-2xl flex flex-col justify-center items-center gap-5'>

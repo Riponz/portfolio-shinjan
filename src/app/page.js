@@ -153,7 +153,13 @@ export default function Home() {
           src="/images/shinjan_page-0021.jpg"
           alt="Hero illustration"
           fill
-          className="object-cover"
+          className="object-cover z-[-1] md:z-0"
+        />
+        <Image
+          src="/images/shinjan_page-0022.jpg"
+          alt="Hero illustration"
+          fill
+          className="object-cover z-0 md:z-[-1]"
         />
         <div className={`w-full flex justify-center mt-20 ${nameFont.className} absolute top-0 left-0 uppercase text-[15vw] md:text-[10vw]`}>
           shinjan

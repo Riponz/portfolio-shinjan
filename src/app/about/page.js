@@ -75,7 +75,7 @@ function About() {
                         alt="photo of Shinjan Mitra"
                         fill
                         className="object-cover" />
-                    <div className='name text-[12vw] absolute bottom-0 right-0 p-2 leading-15 md:leading-20 bg-red-300 lg:leading-45 text-[#ECDCC3] z-20'>SHINJAN</div>
+                    <div className='name text-[10vw] absolute bottom-0 right-0 p-2 leading-15 md:leading-20 bg-green-700 lg:bg-transparent lg:leading-45 text-[#ECDCC3] z-20'>SHINJAN</div>
                 </div>
 
                 <div className='w-[95vw] border-1 my-30'></div>
@@ -95,7 +95,7 @@ function About() {
 
 
             </div>
-            <div className='connect relative w-screen h-screen flex justify-center items-center text-white'>
+            <div className='connect relative w-screen h-screen flex justify-center items-center'>
 
 
         <div className='inner-connect footer w-[85vw] h-[85vh] lg:border-4 lg:rounded-2xl flex flex-col justify-center items-center gap-5'>
@@ -108,7 +108,7 @@ function About() {
         </div>
 
         <div className='credits w-full h-[8vh] absolute bottom-0 left-0 flex justify-center items-center'>
-          <div className='w-full h-full dev flex justify-center items-center uppercase lg:font-semibold text-sm lg:text-base'>Development: Diganta Biswas</div>
+          <div className='w-full h-full dev flex justify-center items-center uppercase lg:font-semibold text-xs lg:text-base'>Development: Diganta Biswas</div>
           <div className='w-full h-full copyright flex justify-center items-center uppercase lg:font-semibold text-sm lg:text-base'>Copyright: Shinjan Mitra</div>
         </div>
 
