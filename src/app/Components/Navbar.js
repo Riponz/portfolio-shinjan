@@ -26,7 +26,7 @@ function Navbar() {
       paused: true
     })
 
-    menuIconRef.current = gsap.to(menuIcon.current,{
+    menuIconRef.current = gsap.to(menuIcon.current, {
       justifyContent: "end",
       duration: 0.6,
       paused: true
@@ -35,6 +35,12 @@ function Navbar() {
 
   })
 
+  const resetPlay = () => {
+    floatMenuRef.current.reverse()
+    menuIconRef.current.reverse()
+    setPlay(false)
+    window.open("mailto:yourname@example.com", "_blank")
+  }
 
   const handleFloatingMenu = () => {
 
@@ -79,10 +85,10 @@ function Navbar() {
           </div>
         </div>
       </nav>
-      <div ref={floatMenu} className='floating-menu flex flex-col items-center w-screen h-0 opacity-0 bg-black text-[#ECDCC3] justify-center text-4xl font-semibold'>
-        <div className='flex justify-center items-center gap-0.5'><SquareIcon sx={{ fontSize: 10 }} className='rotate-45' /><Link href="/works">WORKS</Link></div>
-        <div className='flex justify-center items-center gap-0.5'><SquareIcon sx={{ fontSize: 10 }} className='rotate-45' /><Link href="/about">ABOUT</Link></div>
-        <div className='flex justify-center items-center gap-0.5'><SquareIcon sx={{ fontSize: 10 }} className='rotate-45' /><Link href="#">CONTACT</Link></div>
+      <div ref={floatMenu} className='floating-menu fixed z-19 top-0 left-0 flex flex-col items-center w-screen h-0 opacity-0 bg-black text-[#ECDCC3] justify-center text-4xl font-semibold'>
+        <div className='flex justify-center items-center gap-0.5' onClick={resetPlay}><SquareIcon sx={{ fontSize: 10 }} className='rotate-45' /><Link href="/works">WORKS</Link></div>
+        <div className='flex justify-center items-center gap-0.5' onClick={resetPlay}><SquareIcon sx={{ fontSize: 10 }} className='rotate-45' /><Link href="/about">ABOUT</Link></div>
+        <div className='flex justify-center items-center gap-0.5' onClick={resetPlay}><SquareIcon sx={{ fontSize: 10 }} className='rotate-45' /><Link href="#">CONTACT</Link></div>
       </div>
     </>
   )

@@ -144,6 +144,10 @@ export default function Home() {
 
   })
 
+  const handleEmailClick = () => {
+    window.open("mailto:yourname@example.com", "_blank");
+  };
+
 
   return (
     <div className="home-page overflow-hidden">
@@ -223,21 +227,6 @@ export default function Home() {
 
       </div>
 
-      {/* <div id="footer" className="footer relative w-screen h-screen text-white flex flex-col justify-center items-center gap-5 shrink-0 flex-nowrap">
-        <div ref={quoteRef} className="quote text-xl">“Every artist dips his brush in his own soul, and paints his own nature into his pictures.”</div>
-        <div ref={authorRef} className="author"><i>- Henry Ward Beecher</i></div>
-        <div className="credits absolute bottom-0 left-0 w-full h-max flex justify-center items-center p-10 uppercase">
-          <div className="designed-by flex flex-col justify-center items-start w-full">
-            <div className="text-sm">Development</div>
-            <div className="font-semibold">Diganta Biswas</div>
-          </div>
-          <div className="copyright flex flex-col justify-center items-end w-full">
-            <div className="text-sm">Copyright</div>
-            <div className="font-semibold">Shinjan Mitra</div>
-          </div>
-        </div>
-      </div> */}
-
       <div className='connect relative w-screen h-screen flex justify-center items-center text-white'>
 
 
@@ -245,7 +234,7 @@ export default function Home() {
           <div className='text-[8vw] lg:text-[20vh]'>
             Let&apos;s Connect!
           </div>
-          <div className='button w-[8vh] hover:scale-150 transition-all h-[8vh] border-2 flex justify-center items-center rounded-full'>
+          <div className='button w-[8vh] hover:scale-150 transition-all h-[8vh] border-2 flex justify-center items-center rounded-full' onClick={handleEmailClick}>
             <CallMadeIcon />
           </div>
         </div>
