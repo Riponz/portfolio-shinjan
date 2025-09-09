@@ -166,7 +166,7 @@ export default function Home() {
           className="object-cover z-0 md:z-[-1]"
         />
         <div className={`w-full flex justify-center mt-20 ${nameFont.className} absolute top-0 left-0 uppercase text-[15vw] md:text-[10vw]`}>
-          project
+          shinjan
         </div>
       </div>
 
@@ -240,8 +240,8 @@ export default function Home() {
         </div>
 
         <div className='credits w-full h-[8vh] absolute bottom-0 left-0 flex justify-center items-center'>
-          <div className='w-full h-full dev flex justify-center items-center uppercase lg:font-semibold text-sm lg:text-base'>Development: Diganta Biswas</div>
-          <div className='w-full h-full copyright flex justify-center items-center uppercase lg:font-semibold text-sm lg:text-base'>Copyright: Shinjan Mitra</div>
+          <div className='w-full h-full dev flex justify-center items-center uppercase lg:font-semibold text-xs lg:text-base'>Development: Diganta Biswas</div>
+          <div className='w-full h-full copyright flex justify-center items-center uppercase lg:font-semibold text-xs lg:text-base'>Copyright: Shinjan Mitra</div>
         </div>
 
       </div>

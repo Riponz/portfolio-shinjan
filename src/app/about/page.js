@@ -113,7 +113,7 @@ function About() {
 
                 <div className='credits w-full h-[8vh] absolute bottom-0 left-0 flex justify-center items-center'>
                     <div className='w-full h-full dev flex justify-center items-center uppercase lg:font-semibold text-xs lg:text-base'>Development: Diganta Biswas</div>
-                    <div className='w-full h-full copyright flex justify-center items-center uppercase lg:font-semibold text-sm lg:text-base'>Copyright: Shinjan Mitra</div>
+                    <div className='w-full h-full copyright flex justify-center items-center uppercase lg:font-semibold text-xs lg:text-base'>Copyright: Shinjan Mitra</div>
                 </div>
 
             </div>
