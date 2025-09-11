@@ -129,7 +129,7 @@ function WorkDetail() {
                 <div className='medium flex justify-between items-center gap-2 uppercase font-semibold'>{
                     artworks[id].medium.map(med => {
                         return (
-                            <div className='text-center'>{med}</div>
+                            <div key={med} className='text-center'>{med}</div>
                         )
                     })
                 }</div>
@@ -139,7 +139,7 @@ function WorkDetail() {
                 {
                     artworks[id].pictures.map(pic => {
                         return (
-                            <div className="relative">
+                            <div key={pic} className="relative">
                                 <Image
                                     src={`/images/${pic}.jpg`}
                                     alt="Hero illustration"
