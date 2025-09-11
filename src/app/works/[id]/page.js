@@ -135,11 +135,11 @@ function WorkDetail() {
                 }</div>
                 <div className='size font-semibold'>{artworks[id].size}</div>
             </div>
-            <div className='photos mx-10 flex flex-col justify-center items-center gap-10'>
+            <div className='photos flex flex-col justify-center items-center'>
                 {
                     artworks[id].pictures.map(pic => {
                         return (
-                            <div key={pic} className="relative">
+                            <div key={pic} className="relative m-10">
                                 <Image
                                     src={`/images/${pic}.jpg`}
                                     alt="Hero illustration"
