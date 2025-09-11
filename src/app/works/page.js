@@ -6,8 +6,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image'
 import React from 'react'
 import CallMadeIcon from '@mui/icons-material/CallMade';
+import { useRouter } from 'next/navigation';
 
 function Works() {
+
+    const router = useRouter()
 
     gsap.registerPlugin(ScrollTrigger)
 
@@ -59,23 +62,10 @@ function Works() {
                 scrub: true
             }
         })
-
-        // gsap.from(".dev, .copyright", {
-        //     opacity: 0,
-        //     scale: 1.3,
-        //     delay: 1,
-        //     scrollTrigger: {
-        //         trigger: ".credits",
-        //         start: "top bottom",
-        //         end: "bottom bottom",
-        //         scrub: true
-        //     }
-        // })
     })
 
     const imageNumber = ["02", "05", "07", "09", "11", "13", "16", "18", "20", "21", "24", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35"]
     const imageTitle = [
-
         "Benign Violation",
         "Self Portrait",
         "Laugh You Man",
@@ -109,7 +99,9 @@ function Works() {
                 imageNumber.map((image, index) => {
                     return (
                         <div key={index} className='workCards w-screen h-screen relative flex justify-center items-center'>
-                            <div className='project-image p-2 relative w-[58%] h-[65%] overflow-hidden rounded-4xl'>
+                            <div
+                                onClick={() => { router.push(`/works/${index + 1}-${imageTitle[index].replaceAll(" ","-")}`) }}
+                                className='project-image p-2 relative w-[58%] h-[65%] overflow-hidden rounded-4xl'>
                                 <Image
                                     src={`/images/shinjan_page-00${image}.jpg`}
                                     alt="Hero illustration"

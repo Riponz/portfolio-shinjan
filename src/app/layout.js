@@ -48,9 +48,9 @@ export const metadata = {
   },
 
   // ✅ Favicons (optional if added in `public/`)
-  icons: {
-    icon: "/favicon.ico",
-  },
+  // icons: {
+  //   icon: "/favicon.ico",
+  // },
 };
 
 export default function RootLayout({ children }) {
